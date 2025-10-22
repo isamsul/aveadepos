@@ -28,3 +28,4 @@ async function purgeAndClean() {
 }
 
 purgeAndClean().catch(err => console.error(err))
+
