@@ -8,7 +8,7 @@ async function purgeAndClean() {
   // Step 1: PurgeCSS removes unused selectors, keyframes, and variables
   const purgeResult = await new PurgeCSS().purge({
     content: ['index.html', './**/*.js'], // files to scan for used selectors
-    css: ['styles.css'],
+    css: ['css/styles.css'],
     keyframes: true,
     variables: true,
   })
@@ -23,7 +23,7 @@ async function purgeAndClean() {
   ]).process(css, { from: undefined })
 
   // Step 4: Write final cleaned file
-  fs.writeFileSync('styles.cleaned.css', result.css)
+  fs.writeFileSync('css/styles.min.css', result.css)
   console.log('✅ Cleaned CSS written to styles.cleaned.css')
 }
 
