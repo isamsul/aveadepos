@@ -141,6 +141,29 @@
     gap: 15px;
   }
 
+@scroll-timeline scroll-up-timeline {
+  source: auto;          /* uses the nearest scroll container */
+  orientation: block;    /* vertical scroll */
+  scroll-offsets: (start 80%, end 20%);
+}
+
+  #comp-lzfjcefz11{
+ animation: slide-up-fade 1 both;
+  animation-timeline: scroll-up-timeline;
+  animation-range: entry 80% exit 20%;
+  }
+
+  @keyframes slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
   @media screen and (max-width:1000px) {
     .pricing-plans{
          grid-template-columns:repeat(2, minmax(0, 1fr)) !important;

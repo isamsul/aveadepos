@@ -184,3 +184,28 @@ document.querySelectorAll(".video-play-icon").forEach(el => {
     }
   })
 })
+
+// Observe elements as they scroll into view
+const observer = new IntersectionObserver(entries => {
+  const txt = document.querySelector(".text-to-hide-on-ovarlay")
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      if (txt) {
+        txt.style.opacity = 0;
+      }
+    } else {
+      if (txt) {
+        txt.style.opacity = 1;
+      }// remove if you want to hide again
+    }
+  });
+}, {
+  // rootMargin: "-100px",
+  threshold: 0.5 // adjust sensitivity (0.3 = 30% visible)
+});
+
+if(window.innerWidth > 1000){
+  // Attach observer to all text-slide-up elements
+  document.querySelectorAll('.card-observer-to-hide-title').forEach(el => observer.observe(el));
+
+}
