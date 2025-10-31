@@ -190,9 +190,51 @@
     font-size: max(15px,calc(var(--theme-spx-ratio)*14));
   }
   #comp-mgs0db9z{
-    margin-left: -59px;
+    margin-left: -7%;
   }
-
+  .accordion-inner{
+    border-color: #b5b5b5 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  }
+  .bg-shadow-2, .bg-shadow-1{
+    display: none;
+  }
+  @media screen and (min-width:1000px) {
+     .bg-shadow-1{
+      grid-area: 1/1/3/6;
+      position: absolute;
+      top: -10%;
+      width: 107%;
+      height: 100%;
+      left: -7%;
+      background: white;
+      display: block;;
+    }
+    .bg-shadow-2{
+      grid-area: 1/1/2/3;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      background: black;
+      border-radius: calc(15px + 1%);
+      display: block;
+    }
+    #img-comp-mguna3xz{
+      height: 78%;
+      width: 78%;
+      margin-left: 13%;
+      margin-top: 4%;
+    }
+    #comp-lysehw8z h2{
+      font-size: max(12px,max(.5px,.035 * (var(--scaling-factor) - var(--scrollbar-width))));
+    }
+    #comp-lysemf9d{
+      margin-top: 9%;
+    }
+  }
   @media screen and (max-width:1000px) {
     .pricing-plans{
          grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
